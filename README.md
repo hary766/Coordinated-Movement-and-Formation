@@ -5,7 +5,7 @@
 The aim of the project is to create movement and formation code for a postive game experience with a RTS-style of game.
 In this reseach i will be using unity 3D. This paper will evolve with the progress made.
 
-> Currently working on the States of the Units and, finding more research material
+> Screenshot of working with the navMesh in Unity 3D
 
 ![](Photo_01.PNG)
 
