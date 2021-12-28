@@ -30,7 +30,11 @@ public class Selection : MonoBehaviour
             if(Input.GetMouseButtonDown(1))
             {
                 selectWindow.gameObject.SetActive(true);
-                SelectedUnits = new List<Unit>();
+                controller.Selected = new List<Unit>();
+                foreach(Unit unit in controller.units)
+                {
+                    unit.SetIsActive(false);
+                }
                 startpos = Input.mousePosition;
 
             }
@@ -48,9 +52,11 @@ public class Selection : MonoBehaviour
                 Vector3 screenpos = cam.WorldToScreenPoint(unit.transform.position);
                 if(screenpos.x > min.x && screenpos.x < max.x && screenpos.y > min.y && screenpos.y < max.y)
                 {
-                    controller.group.Add(groupnumber, unit);
+                    controller.Selected.Add(unit);
                     unit.SetCurrentPostion(unit.transform.position);
                     unit.SetIsActive(true);
+
+
                 }
             }
         }

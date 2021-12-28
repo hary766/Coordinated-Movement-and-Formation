@@ -8,7 +8,7 @@ public class UnitController : MonoBehaviour
     public List<Unit> units = new List<Unit>();
 
     //Groups of units
-    public List<List<Unit>> groups = new List<List<Unit>>();
+    public List<Unit> Selected = new List<Unit>();
 
     public Vector3 desiredPostion;
 
@@ -27,6 +27,15 @@ public class UnitController : MonoBehaviour
 
     private void Update()
     {
+
+        //Update Task of Active units
+        {
+            foreach(Unit unit in Selected)
+            {
+                unit.SetDesiredPostion(desiredPostion);
+            }
+        }
+        //Update all Units to do there Task
         foreach(Unit unit in units)
         {
                 unit.Moveunit();
