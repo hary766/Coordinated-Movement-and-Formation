@@ -52,9 +52,20 @@ public class SquareFormation : IFormations
 
     }
 }
-public class FormationController
+public class CircleFormation : IFormations
 {
+    public void ExercuteFormation(List<Unit> units, Vector3 TargetPos)
+    {
+        for(int x = 0; x < units.Count; x++)
+        {
+            float radius = 5;
+            float angle = x * (2 * Mathf.PI / units.Count);
+            float xpos = Mathf.Cos(angle) * radius;
+            float ypos = Mathf.Sin(angle) * radius;
 
+            TargetPos = new Vector3(TargetPos.x + xpos, TargetPos.y, TargetPos.z + ypos);
 
-
+            units[x].desiredPostion = TargetPos;
+        }
+    }
 }

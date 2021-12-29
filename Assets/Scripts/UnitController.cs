@@ -11,7 +11,7 @@ public class UnitController : MonoBehaviour
     public List<Unit> Selected = new List<Unit>();
 
     SquareFormation formations = new SquareFormation();
-
+    CircleFormation circle = new CircleFormation();
    void AddAllActiveUnits()
     {
         var objects = FindObjectsOfType<Unit>();
@@ -37,6 +37,10 @@ public class UnitController : MonoBehaviour
     {
         //Get Current Formation
         if (Selected.Count > 1)
-            formations.ExercuteFormation(Selected, target);
+        {
+            //formations.ExercuteFormation(Selected, target);
+            circle.ExercuteFormation(Selected, target);
+        }
+            
     }
 }
