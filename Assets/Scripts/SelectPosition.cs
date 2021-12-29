@@ -43,7 +43,7 @@ public class SelectPosition : MonoBehaviour, IPointerClickHandler
                 var worldPos = eventData.pointerCurrentRaycast.worldPosition;
                 CurrentPosition = worldPos;
 
-                unitController.SetDesiredPosition(CurrentPosition);
+                unitController.SetFormation(CurrentPosition);
             }
 
         }

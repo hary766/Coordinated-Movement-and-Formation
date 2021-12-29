@@ -10,7 +10,7 @@ public class UnitController : MonoBehaviour
     //Groups of units
     public List<Unit> Selected = new List<Unit>();
 
-    public Vector3 desiredPostion;
+    SquareFormation formations = new SquareFormation();
 
    void AddAllActiveUnits()
     {
@@ -27,22 +27,16 @@ public class UnitController : MonoBehaviour
 
     private void Update()
     {
-
-        //Update Task of Active units
-        {
-            foreach(Unit unit in Selected)
-            {
-                unit.SetDesiredPostion(desiredPostion);
-            }
-        }
         //Update all Units to do there Task
         foreach(Unit unit in units)
         {
                 unit.Moveunit();
         }
     }
-    public void SetDesiredPosition(Vector3 newPosition)
+    public void SetFormation(Vector3 target)
     {
-        desiredPostion = newPosition;
+        //Get Current Formation
+        if (Selected.Count > 1)
+            formations.ExercuteFormation(Selected, target);
     }
 }

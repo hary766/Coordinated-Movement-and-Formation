@@ -5,14 +5,15 @@ using UnityEngine.AI;
 
 public class Unit : MonoBehaviour
 {
-    Vector3 desiredPostion;
-    Vector3 currentPostion;
+   public Vector3 desiredPostion;
+   public Vector3 currentPostion;
 
+    // debug
     [SerializeField]
     private Material unitColor;
 
     [SerializeField]
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
 
     [SerializeField]
     private GameObject selected;
