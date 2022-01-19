@@ -47,6 +47,8 @@ public class Selection : MonoBehaviour
             Vector2 min = selectWindow.anchoredPosition - selectWindow.sizeDelta / 2;
             Vector2 max = selectWindow.anchoredPosition + selectWindow.sizeDelta / 2;
 
+            List<Unit> SelectedUnits = new List<Unit>();
+             
             foreach(Unit unit in controller.units)
             {
                 Vector3 screenpos = cam.WorldToScreenPoint(unit.transform.position);
@@ -55,10 +57,11 @@ public class Selection : MonoBehaviour
                     controller.Selected.Add(unit);
                     unit.SetCurrentPostion(unit.transform.position);
                     unit.SetIsActive(true);
-
-
+                    SelectedUnits.Add(unit);
                 }
             }
+            //Add units to group
+            controller.GreateNewGroup(SelectedUnits);
         }
 
     }

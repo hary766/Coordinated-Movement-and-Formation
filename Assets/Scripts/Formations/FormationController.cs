@@ -9,7 +9,8 @@ public interface IFormations
 
 public class SquareFormation : IFormations
 {
-    float defaultSpeed = 5;
+    float defaultSpeed = 20;
+
     public void ExercuteFormation(List<Unit> units, Vector3 Targetpos)
     {
         //Check whenever you selected units
@@ -29,14 +30,15 @@ public class SquareFormation : IFormations
                 }
             }
 
+            //We got a comander, now the other units should follow him
             float sqrt = Mathf.Sqrt(units.Count);
-            float startposx = Targetpos.x;
+            float startposx = Commander.currentPostion.x;
             float counter = -1;
             float xoffset = 0;
             for(int j = 0; j < units.Count; ++j)
             {
                 counter++;
-                Targetpos = new Vector3(Targetpos.x + xoffset, Targetpos.y, Targetpos.z);
+                Targetpos = new Vector3(Commander.currentPostion.x + xoffset, Commander.currentPostion.y, Commander.currentPostion.z);
                 xoffset = 5;
                 if(counter== Mathf.Floor(sqrt))
                 {
@@ -44,6 +46,7 @@ public class SquareFormation : IFormations
                     Targetpos.x = startposx;
                     Targetpos.z += 5;
                 }
+                Debug.LogError(Targetpos);
                 units[j].SetDesiredPostion(Targetpos);
             }
 
