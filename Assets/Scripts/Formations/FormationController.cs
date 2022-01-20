@@ -34,6 +34,7 @@ public class SquareFormation : IFormations
             }
         }
     }
+    //Code from: https://answers.unity.com/questions/1402840/how-can-i-create-a-squad-of-soldiers-in-specific-f.html
     private Vector3 GetPostions(int index)
     {
         float posX;
