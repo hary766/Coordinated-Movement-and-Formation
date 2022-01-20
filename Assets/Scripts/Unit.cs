@@ -22,6 +22,8 @@ public class Unit : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        currentPostion = this.transform.position;
+        desiredPostion = this.transform.position;
     }
     public void SetCurrentPostion(Vector3 pos)
     {

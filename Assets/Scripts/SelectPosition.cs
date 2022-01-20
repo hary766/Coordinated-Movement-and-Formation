@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 
 public class SelectPosition : MonoBehaviour, IPointerClickHandler
 {
-    public Vector3 CurrentPosition;
-    public Vector3 LastPosition;
+    public Vector3 CurrentPosition = Vector3.zero;
+    public Vector3 LastPosition = Vector3.zero;
 
     [SerializeField]
     private UnitController unitController;
@@ -14,8 +14,6 @@ public class SelectPosition : MonoBehaviour, IPointerClickHandler
     private void Awake()
     {
         addPhysicsRaycaster();
-        CurrentPosition = Vector3.zero;
-        LastPosition = Vector3.zero;
     }
     //Add a physic Raycast to camera, if there wasn't one yet.
     void addPhysicsRaycaster()

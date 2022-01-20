@@ -80,7 +80,15 @@ public class UnitController : MonoBehaviour
 
         //Add to group
         if (Selected.Count > 1)
+        {
+            var colour = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
             Groups.Add(Selected);
+            foreach(var unit in Selected)
+            {
+                unit.GetComponent<Renderer>().material.color = colour;
+            }
+        }
+            
 
         NewgroupCreated = true;
     }
