@@ -61,8 +61,6 @@ public class UnitController : MonoBehaviour
         //Get Current Formation
         if (Groups.Count >= 1)
         {
-            Debug.Log(Groups.Count);
-            //formations.ExercuteFormation(Selected, target);
            formation.ExercuteFormation(Groups[Groups.Count-1], Targetpostion);
         } 
     }
