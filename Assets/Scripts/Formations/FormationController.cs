@@ -26,7 +26,7 @@ public class SquareFormation : IFormations
             {
                 if(Commander != units[j])
                 {
-                    Vector3 pos = GetPostions(j);
+                    Vector3 pos = CalcPosition(j);
                     Vector3 newpos = new Vector3(pos.x + Commander.desiredPostion.x, 0,  pos.z +Commander.desiredPostion.z);
                     Debug.Log(pos.x + Commander.desiredPostion.x + " " + pos.z + Commander.desiredPostion.z);
                     units[j].transform.rotation = Commander.transform.rotation;
@@ -36,8 +36,7 @@ public class SquareFormation : IFormations
         }
     }
 
-    //Code from: https://answers.unity.com/questions/1402840/how-can-i-create-a-squad-of-soldiers-in-specific-f.html
-    private Vector3 GetPostions(int index)
+    private Vector3 CalcPosition(int index)
     {
         float posX;
         float posY;
@@ -63,6 +62,10 @@ public class CircleFormation : IFormations
             float radians = i *( 2 * 3.14159f/units.Count); 
             float x =(Mathf.Cos(radians) * radius);
             float z = (Mathf.Sin(radians) * radius);
+
+            Debug.LogError(x + " " + z);
+            // Vector3 temp = new Vector3(TargetPos.x  , 1, TargetPos.z-5);
+            //units[x].transform.LookAt(temp);
 
             TargetPos = new Vector3(TargetPos.x + x, 0, TargetPos.z + z);
 
