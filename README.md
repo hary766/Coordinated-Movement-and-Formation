@@ -9,12 +9,11 @@ In this reseach i will be using unity 3D. This paper will evolve with the progre
 
 ![Alt Text](https://media.giphy.com/media/U7b3FguUXQuHHfqQh1/giphy.gif)
 
-For the pathfinding i use the Navmesh from unity, see picture above.
 
 
 ## Groups
-Your able to select groups of units. This is done by a list of selected objects, that is saved in a other list.
-The new group get there own colour that is random generated.
+You are able to select groups of units. This is done by a list of selected objects, that is saved in another list.
+The new group gets their own colour that is randomly generated.
 
 ```
   public List<Unit> Selected = new List<Unit>();
@@ -47,7 +46,7 @@ The new group get there own colour that is random generated.
 
 ## Formations
 
-For both my formation i used an interface to easy select a new formation and make new ones later on.
+For both my formations,I used an interface to easily select a new formation and make new ones later on.
 
 ```
 public interface IFormations
