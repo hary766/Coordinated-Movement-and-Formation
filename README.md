@@ -5,13 +5,13 @@
 The aim of the project is to create movement and formation code for a postive game experience with a RTS-style of game.
 In this reseach i will be using unity 3D. This paper will evolve with the progress made.
 
-> Current state
-
-![Alt Text](https://media.giphy.com/media/U7b3FguUXQuHHfqQh1/giphy.gif)
 
 
+![Alt Text](https://media.giphy.com/media/4grrK5QCd7ewawvw8k/giphy.gif)
 
-## Groups
+#  Design/implementation
+
+### Groups
 You are able to select groups of units. This is done by a list of selected objects, that is saved in another list.
 The new group gets their own colour that is randomly generated.
 
@@ -44,7 +44,7 @@ The new group gets their own colour that is randomly generated.
 
 ![Alt Text](https://media.giphy.com/media/S1SN9WjyNm0j4MPdyO/giphy.gif)
 
-## Formations
+### Formations
 
 For both my formations,I used an interface to easily select a new formation and make new ones later on.
 
@@ -71,20 +71,21 @@ public void UpdateFormation()
     }
 ```
 
-Circle Formation:
 
-![Alt Text](https://media.giphy.com/media/WKmtleUsDExaYKqSkW/giphy.gif)
-
-SquareFormation:
-
-![Alt Text](https://media.giphy.com/media/FLmO4QkH9u7yxWAQ7V/giphy.gif)
+#  Results
+![Alt Text](https://media.giphy.com/media/U7b3FguUXQuHHfqQh1/giphy.gif)
 
 
+# Conclusion/Future work
+
+-[ ] Add more formations
+
+-[ ] Save Groups on numpad
 
 
 
 
-##### Resources and helpfull
+#### Resources
 ```
  + https://www.gamasutra.com/view/feature/3314/coordinated_unit_movement.php?print=1
  
@@ -92,4 +93,4 @@ SquareFormation:
 
 ```
 
-![Alt Text](https://media.giphy.com/media/4grrK5QCd7ewawvw8k/giphy.gif)
+
